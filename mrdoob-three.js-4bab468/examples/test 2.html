@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<title>three.js - ASCII Effect</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<style>
+			body {
+				font-family: Monospace;
+				background-color: #f0f0f0;
+				margin: 0px;
+				overflow: hidden;
+			}
+		</style>
+	</head>
+	<body>
+
+		<script src="../build/three.min.js"></script> 
+
+		<script src="js/controls/TrackballControls.js"></script>
+		<script src="js/effects/AsciiEffect.js"></script>
+
+		<script src="js/renderers/Projector.js"></script>
+		<script src="js/renderers/CanvasRenderer.js"></script>
+
+		<script src="js/libs/stats.min.js"></script>
+
+		<script>
+// enter javascript here:
+
+			var scene = new THREE.Scene();
+			var camera = new THREE.PerspectiveCamera( 75, window.innerWidth/window.innerHeight, 0.1, 1000 );
+			var renderer = new THREE.WebGLRenderer();
+			renderer.setSize( window.innerWidth, window.innerHeight );
+			document.body.appendChild( renderer.domElement );
+
+			var geometry = new THREE.BoxGeometry( 1, 1, 1 );
+			var material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
+			var cube = new THREE.Mesh( geometry, material );
+			scene.add( cube );
+
+			camera.position.z = 5;
+
+			var render = function () {
+				requestAnimationFrame( render );
+
+				cube.rotation.x += 0.001;
+				cube.rotation.y += 0.001;
+
+				renderer.render(scene, camera);
+			};
+
+			render();
+		</script>
+	</body>
+</html>
