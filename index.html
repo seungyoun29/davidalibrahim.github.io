@@ -209,7 +209,18 @@
               break;
           }
         } else {
-          currentColorRange = [0.69, 0.6];
+
+          switch (info.weather[0].main) {
+            case 'Clouds':
+              currentColorRange = [0, 0.5];
+              break;
+            case 'Rain':
+              currentColorRange = [0.9, 0.5];
+              break;
+            case 'Clear':
+            default:
+              currentColorRange = [0.6, 0.7];
+              break;
         }
 
         if (currentCity < cities.length-1) currentCity++;
