@@ -198,29 +198,18 @@
         if (isDay) {
           switch (info.weather[0].main) {
             case 'Clouds':
-              currentColorRange = [0, 0.01];
+              currentColorRange = [0, 0.1];
               break;
             case 'Rain':
-              currentColorRange = [0.7, 0.1];
+              currentColorRange = [0.35, 0.4];
               break;
             case 'Clear':
             default:
-              currentColorRange = [0.6, 0.7];
+              currentColorRange = [0.55, 0.7];
               break;
           }
         } else {
-
-          switch (info.weather[0].main) {
-            case 'Clouds':
-              currentColorRange = [0, 0.5];
-              break;
-            case 'Rain':
-              currentColorRange = [0.9, 0.5];
-              break;
-            case 'Clear':
-            default:
-              currentColorRange = [0.6, 0.7];
-              //break;
+          currentColorRange = [0.7, 0.8];
         }
 
         if (currentCity < cities.length-1) currentCity++;
