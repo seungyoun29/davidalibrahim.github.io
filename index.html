@@ -40,8 +40,8 @@
 
           // Particles
           particles = new THREE.Object3D(),
-          totalParticles = 200,
-          maxParticleSize = 100,
+          totalParticles = 500,
+          maxParticleSize = 50,
           particleRotationSpeed = 0,
           particleRotationDeg = 0,
           lastColorRange = [0, 0.3],
@@ -66,7 +66,7 @@
         renderer = new THREE.WebGLRenderer();
 
         element = renderer.domElement;
-        renderer.setClearColor (0x313131);
+        renderer.setClearColor (0x000000);
         container = document.getElementById('webglviewer');
         container.appendChild(element);
 
@@ -114,7 +114,7 @@
         floorTexture.anisotropy = renderer.getMaxAnisotropy();
 
         var floorMaterial = new THREE.MeshPhongMaterial({
-          color: 0xffffff,
+          color: 0xd7eff5,
           specular: 0xffffff,
           shininess: 10,
           shading: THREE.FlatShading,
