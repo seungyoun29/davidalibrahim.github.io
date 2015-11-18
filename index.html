@@ -64,7 +64,9 @@
         scene.add(camera);
 
         renderer = new THREE.WebGLRenderer();
+
         element = renderer.domElement;
+        renderer.setClearColor (0x313131);
         container = document.getElementById('webglviewer');
         container.appendChild(element);
 
@@ -114,7 +116,7 @@
         var floorMaterial = new THREE.MeshPhongMaterial({
           color: 0xffffff,
           specular: 0xffffff,
-          shininess: 20,
+          shininess: 10,
           shading: THREE.FlatShading,
           map: floorTexture
         });
