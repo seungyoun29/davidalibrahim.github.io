@@ -40,8 +40,8 @@
 
           // Particles
           particles = new THREE.Object3D(),
-          totalParticles = 500,
-          maxParticleSize = 50,
+          totalParticles = 300,
+          maxParticleSize = 25,
           particleRotationSpeed = 0,
           particleRotationDeg = 0,
           lastColorRange = [0, 0.3],
@@ -114,8 +114,8 @@
         floorTexture.anisotropy = renderer.getMaxAnisotropy();
 
         var floorMaterial = new THREE.MeshPhongMaterial({
-          color: 0xd7eff5,
-          specular: 0xffffff,
+          color: 0xd7eff5, // light color edge
+          specular: 0xd7eff5,
           shininess: 10,
           shading: THREE.FlatShading,
           map: floorTexture
